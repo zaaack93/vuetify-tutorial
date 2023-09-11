@@ -6,16 +6,18 @@
           nav
         >
         <v-list-subheader>Menu principale</v-list-subheader>
-
+        <!-- <router-link to="/"> -->
           <v-list-item
             v-for="(item, i) in items"
             :key="i"
             :value="item"
             active-color="primary"
             :prepend-icon="item.icon"
+            :to="item.link"
           >
             <v-list-item-title v-text="item.text"></v-list-item-title>
           </v-list-item>
+
         </v-list>
     </v-navigation-drawer>
 
@@ -32,7 +34,9 @@
     </v-app-bar>
 
     <v-main>
-      <!--  -->
+      <v-container>
+        <router-view />
+      </v-container>
     </v-main>
   </v-app>
 </template>
@@ -48,8 +52,8 @@ export default {
   data: () => ({
     drawer:true,
     items: [
-        { text: 'Acceuil', icon: 'mdi-home' },
-        { text: 'Page 2', icon: 'mdi-folder' }
+        { text: 'Acceuil', icon: 'mdi-home',link:"home" },
+        { text: 'Page 2', icon: 'mdi-folder',link:"page2" }
       ],
   }),
 }
