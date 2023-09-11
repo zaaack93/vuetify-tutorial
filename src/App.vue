@@ -12,6 +12,7 @@
             :key="i"
             :value="item"
             active-color="primary"
+            :prepend-icon="item.icon"
           >
             <v-list-item-title v-text="item.text"></v-list-item-title>
           </v-list-item>
@@ -47,7 +48,7 @@ export default {
   data: () => ({
     drawer:true,
     items: [
-        { text: 'Acceuil', icon: 'mdi-folder' },
+        { text: 'Acceuil', icon: 'mdi-home' },
         { text: 'Page 2', icon: 'mdi-folder' }
       ],
   }),
